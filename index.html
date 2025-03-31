@@ -180,6 +180,7 @@
                     document.getElementById("userInfo").innerText = `Welcome, ${result.user.displayName}`;
                     document.getElementById("googleSignIn").style.display = "none";
                     document.getElementById("signOut").style.display = "block";
+                    localStorage.setItem("isLoggedIn", "true");
                     window.location.href = "departments.html";
                 })
                 .catch((error) => {
@@ -192,6 +193,7 @@
                 document.getElementById("userInfo").innerText = "";
                 document.getElementById("googleSignIn").style.display = "block";
                 document.getElementById("signOut").style.display = "none";
+                localStorage.removeItem("isLoggedIn");
                 window.location.href = "index.html";
             });
         });
