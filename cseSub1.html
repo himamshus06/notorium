@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSE Subject 1</title>
+    <title>Departments</title>
+    
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script> 
 </head>
 <body>
+    <button id="googleSignIn" style="display: none;">Sign In with Google</button>
+    <!-- <button id="signOut" style="display:none;">Sign Out</button> -->
+    <p id="userInfo"></p>
     <header class="text-gray-600 body-font">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span class="ml-3 text-xl">Tailblocks</span>
-          </a>
-          <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-gray-900">First Link</a>
-            <a class="mr-5 hover:text-gray-900">Second Link</a>
-            <a class="mr-5 hover:text-gray-900">Third Link</a>
-            <a class="mr-5 hover:text-gray-900">Fourth Link</a>
-          </nav>
-          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </header>
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg> -->
+          <span class="ml-3 text-xl">Notorium</span>
+        </a>
+        <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+          <a class="mr-5 hover:text-gray-900" href="about.html">About Us</a>
+          <a class="mr-5 hover:text-gray-900" href="https://canaraengineering.in/">College Website</a>
+          <a class="mr-5 hover:text-gray-900">Instagram Page</a>
+          <a class="mr-5 hover:text-gray-900" href="index.html">Home</a>
+        </nav>
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" id="signOut">Sign Out
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
 
 
 
@@ -36,17 +42,25 @@
       <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
-              <br class="hidden lg:inline-block">readymade gluten
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Module 1
+              <br class="hidden lg:inline-block">Calculus
             </h1>
-            <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            <p class="mb-8 leading-relaxed">Introduction to polar coordinates and curvature relating to Computer Science and
+              Engineering.
+              Polar coordinates, Polar curves, angle between the radius vector and the tangent, angle
+              between two curves. Pedal equations. Curvature and Radius of curvature - Cartesian,
+              Parametric, Polar and Pedal forms. Problems.
+              Self-study: Center and circle of curvature, evolutes and involutes.
+              Applications: Computer graphics, Image processing.
+              (RBT Levels: L1, L2 and L3 )
+              </p>
             <div class="flex justify-center">
-              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-              <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+              <a href="books1/BMATS101-Module 1 (1).pdf"><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button></a>
+              
             </div>
           </div>
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+            <img class="object-cover object-center rounded" alt="hero" src="images/icon-354353_1920.png" width="75%">
           </div>
         </div>
       </section>
@@ -54,17 +68,26 @@
       <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
-              <br class="hidden lg:inline-block">readymade gluten
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Module 2
+              <br class="hidden lg:inline-block">Series Expansion and Multivariable Calculus
+
             </h1>
-            <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            <p class="mb-8 leading-relaxed">Taylor’s and Maclaurin’s theorems for function of one variable (statement only) – problems on Maclaurin’s
+              Series.
+              Evaluation of Indeterminate forms - L’Hospital’s rule –Problems.
+              Partial differentiation, total derivative - differentiation of composite functions. Jacobian and problems. Maxima
+              and minima for a function of two variables. Problems.
+              Self-study: Euler’s Theorem and problems. Method of Lagrange’s undetermined multipliers with single
+              constraint.
+              (RBT Levels: L1, L2 and L3 )
+              </p>
             <div class="flex justify-center">
-              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-              <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+              <a href="books1/BMATS101-Module 2 (1).pdf"><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button></a>
+              
             </div>
           </div>
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+            <img class="object-cover object-center rounded" alt="hero" src="images/icon-354353_1920.png" width="75%">
           </div>
         </div>
       </section>
@@ -72,17 +95,40 @@
       <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
-              <br class="hidden lg:inline-block">readymade gluten
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Module 3
+              <br class="hidden lg:inline-block">Ordinary Differential Equations (ODEs) of First order 
             </h1>
-            <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            <p class="mb-8 leading-relaxed">Introduction to first-order ordinary differential equations pertaining to the applications
+              for Computer Science & Engineering.
+              Linear and Bernoulli’s differential equations. Exact and reducible to exact differential
+              equations - Integrating factors on
+              
+              
+              *
+              
+              
+              
+               +
+              
+              *
+              
+              
+              
+               +. Orthogonal trajectories,
+              L-R and C-R circuits. Problems.
+              Non-linear differential equations: Introduction to general and singular solutions, Solvable
+              for p only, Clairaut’s equations, reducible to Clairaut’s equations. Problems.
+              Self-Study: Applications of ODEs, Solvable for x and y.
+              Applications of ordinary differential equations: Rate of Growth or Decay, Conduction
+              of heat.(RBT Levels: L1, L2 and L3 )
+              </p>
             <div class="flex justify-center">
-              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-              <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+              <a href="books1/BMATS101-Module 3 (1).pdf"><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button></a>
+              
             </div>
           </div>
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+            <img class="object-cover object-center rounded" alt="hero" src="images/icon-354353_1920.png" width="75%">
           </div>
         </div>
       </section>
@@ -90,17 +136,24 @@
       <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
-              <br class="hidden lg:inline-block">readymade gluten
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Module 4
+              <br class="hidden lg:inline-block">Modular Arithmetic 
             </h1>
-            <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            <p class="mb-8 leading-relaxed">Introduction to Congruences, Linear Congruences, The Remainder theorem (statement only),
+              Solving Polynomials, Linear Diophantine Equation, System of Linear Congruences.
+              Euler’s Theorem (statement only), Wilson’s Theorem (statement only) and Fermat’s little
+              theorem (statement only). Applications of Congruences-RSA algorithm
+              Self-Study: Divisibility, GCD, Properties of Prime Numbers, Fundamental theorem of
+              Arithmetic.
+              Applications of ordinary differential equations: Cryptography, encoding and decoding,
+              RSA applications in public key encryption. (RBT Levels: L1, L2 and L3 )</p>
             <div class="flex justify-center">
-              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-              <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+              <a href="books1/BMATS101-Module 4 (1).pdf"><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button></a>
+             
             </div>
           </div>
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+            <img class="object-cover object-center rounded" alt="hero" src="images/icon-354353_1920.png" width="75%">
           </div>
         </div>
       </section>
@@ -108,17 +161,25 @@
       <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
-              <br class="hidden lg:inline-block">readymade gluten
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Module 5
+              <br class="hidden lg:inline-block">Linear Algebra 
             </h1>
-            <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            <p class="mb-8 leading-relaxed">Introduction of linear algebra related to EC & EE engineering applications.
+              Elementary row transformation of a matrix, Rank of a matrix. Consistency and Solution of system of linear
+              equations - Gauss-elimination method, Gauss-Jordan method and approximate solution by Gauss-Seidel
+              method. Eigenvalues and Eigenvectors, Rayleigh’s power method to find the dominant Eigenvalue and
+              Eigenvector.
+              Self-Study: Solution of system of equations by Gauss-Jacobi iterative method. Inverse of a square matrix by
+              Cayley- Hamilton theorem.
+              Applications: Network Analysis, Markov Analysis, Critical point of a network system. Optimum solution.
+              (RBT Levels: L1, L2 and L3 )</p>
             <div class="flex justify-center">
-              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-              <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+              <a href="books1/BMATS101-Module 5 (1).pdf"><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Download</button></a>
+              
             </div>
           </div>
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+            <img class="object-cover object-center rounded" alt="hero" src="images/icon-354353_1920.png" width="75%">
           </div>
         </div>
       </section>
@@ -129,18 +190,18 @@
 
 
 
-      <footer class="text-gray-600 body-font">
+      <footer class="text-gray-600 body-font" >
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span class="ml-3 text-xl">Tailblocks</span>
+            </svg> -->
+            <span class="ml-3 text-xl">Notorium</span>
           </a>
-          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Tailblocks —
-            <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@knyttneve</a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4" >© 2025 Notorium —
+            <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@notorium</a>
           </p>
-          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <!-- <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a class="text-gray-500">
               <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
@@ -163,9 +224,68 @@
                 <circle cx="4" cy="4" r="2" stroke="none"></circle>
               </svg>
             </a>
-          </span>
+          </span> -->
         </div>
       </footer>
+
+
+
+      <script type="module"> 
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "index.html"; // Redirect back to login if not signed in
+    alert("Please sign in to access this page.");
+}
+
+
+
+
+
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    
+        const firebaseConfig = {
+    apiKey: "AIzaSyDRZ21TGAod8V5ciFQ53oC-6fgo6fYDpiE",
+    authDomain: "authenticator-2d37a.firebaseapp.com",
+    projectId: "authenticator-2d37a",
+    storageBucket: "authenticator-2d37a.firebasestorage.app",
+    messagingSenderId: "617522787164",
+    appId: "1:617522787164:web:61833b16bf9d249b910799"
+  };
+    
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
+
+
+   
+    
+        document.getElementById("googleSignIn").addEventListener("click", () => {
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                 
+                    document.getElementById("userInfo").innerText = `Welcome, ${result.user.displayName}`;
+                    document.getElementById("googleSignIn").style.display = "none";
+                    document.getElementById("signOut").style.display = "block";
+                    window.location.href = "index.html";
+                })
+                .catch((error) => {
+                    console.error(error.message);
+                });
+        });
+
+   
+    
+        document.getElementById("signOut").addEventListener("click", () => {
+            signOut(auth).then(() => {
+                document.getElementById("userInfo").innerText = "";
+                document.getElementById("googleSignIn").style.display = "block";
+                document.getElementById("signOut").style.display = "none";
+                localStorage.removeItem("isLoggedIn");
+                window.location.href = "index.html";
+            });
+        });
+    </script>
     
 </body>
 </html>
