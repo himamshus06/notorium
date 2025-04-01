@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSE department</title>
+    <title>Departments</title>
+    
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-    <script src="https://kit.fontawesome.com/44bdc731e1.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script> 
 </head>
 <body>
-  <p id="userInfo"></p>
-
-  <header class="text-gray-600 body-font">
+    <button id="googleSignIn" style="display: none;">Sign In with Google</button>
+    <!-- <button id="signOut" style="display:none;">Sign Out</button> -->
+    <p id="userInfo"></p>
+    <header class="text-gray-600 body-font">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
@@ -24,7 +25,7 @@
           <a class="mr-5 hover:text-gray-900" href="about.html">About Us</a>
           <a class="mr-5 hover:text-gray-900" href="https://canaraengineering.in/">College Website</a>
           <a class="mr-5 hover:text-gray-900">Instagram Page</a>
-          <a class="mr-5 hover:text-gray-900">Contact</a>
+          <a class="mr-5 hover:text-gray-900" href="index.html">Home</a>
         </nav>
         <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" id="signOut">Sign Out
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
@@ -44,82 +45,82 @@
           <div class="flex flex-wrap -m-4">
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="cseSub1.html">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
+                <img alt="Mathematics for CSE Stream – I" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/Oaqk7qqNh_c/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BMATS101</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Mathematics for CSE Stream – I (MAT)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261">
+                <img alt="Chemistry for CSE Stream" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/2zDXqgTzEFE/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BCHES102</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Chemistry for CSE Stream (CHE)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262">
+                <img alt="Computer Aided Engineering Drawing" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/3GZNPBLImWc/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BCEDK103</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Computer Aided Engineering Drawing (CAED)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263">
+                <img alt="Introduction to Civil Engineering" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/aerial-view-of-high-rise-buildings-NMrUtSA7094">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BESCK104A</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Introduction to Civil Engineering (ICE)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264">
+                <img alt="Introduction to Web Programming" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/KE0nC8-58MQ/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BPLCK105A</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Introduction to Web Programming (IWP)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265">
+                <img alt="Communicative English" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/8pb7Hq539Zw/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BENGK106</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Communicative English (ENG)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267">
+                <img alt="Samskrutika Kannada" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/9wg5jCEPBsw/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BKSKK107</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Samskrutika Kannada (SK)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268">
+                <img alt="Innovation and Design Thinking" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/5QgIuuBxKwM/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BIDTK158</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Innovation and Design Thinking (IDT)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
           </div>
@@ -130,83 +131,83 @@
           <h2 class="text-gray-900 title-font text-lg font-medium">Physics Cycle</h2>
           <div class="flex flex-wrap -m-4">
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden" href="cseSub1.html">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
+              <a class="block relative h-48 rounded overflow-hidden" href="">
+                <img alt="Mathematics for CSE Stream – II" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/Oaqk7qqNh_c/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BMATS201</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Mathematics for CSE Stream – II (MAT)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261">
+                <img alt="Physics for CSE Stream" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/5fNmWej4tAA/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BPHYS202</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Physics for CSE Stream (PHY)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262">
+                <img alt="Principles of Programming Using C" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/IgUR1iX0mqM/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BPOPS203</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Principles of Programming Using C (PPC)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263">
+                <img alt="Introduction to Mechanical Engineering" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/7KkDiSs5UdQ/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BESCK204D</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Introduction to Mechanical Engineering (IME)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264">
+                <img alt="Introduction to Internet of Things" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/8xAA0f9yQnE/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                <p class="mt-1">$16.00</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BETCK205H</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Introduction to Internet of Things (IOT)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265">
+                <img alt="Professional Writing Skills in English" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/3Mhgvrk4tjM/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                <p class="mt-1">$21.15</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BPWSK206</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Professional Writing Skills in English (PWS)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267">
+                <img alt="Indian Constitution" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/1K9T5YiZ2WU/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                <p class="mt-1">$12.00</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BICOK207</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Indian Constitution (ICO)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a class="block relative h-48 rounded overflow-hidden" href="">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268">
+                <img alt="Scientific Foundation Health" class="object-cover object-center w-full h-full block" src="https://unsplash.com/photos/7tDGb3HrITg/download?force=true&w=640">
               </a>
               <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                <p class="mt-1">$18.40</p>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">BSFHK258</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Scientific Foundation Health (SFH)</h2>
+                <p class="mt-1">5 Modules</p>
               </div>
             </div>
           </div>
@@ -254,6 +255,62 @@
           </span> -->
         </div>
       </footer>
+
+
+      <script type="module">
+
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "index.html"; // Redirect back to login if not signed in
+            alert("Please sign in to access this page.");
+        }
+        
+        
+                
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+                import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+            
+                const firebaseConfig = {
+            apiKey: "AIzaSyDRZ21TGAod8V5ciFQ53oC-6fgo6fYDpiE",
+            authDomain: "authenticator-2d37a.firebaseapp.com",
+            projectId: "authenticator-2d37a",
+            storageBucket: "authenticator-2d37a.firebasestorage.app",
+            messagingSenderId: "617522787164",
+            appId: "1:617522787164:web:61833b16bf9d249b910799"
+          };
+            
+                const app = initializeApp(firebaseConfig);
+                const auth = getAuth();
+                const provider = new GoogleAuthProvider();
+        
+        
+           
+            
+                document.getElementById("googleSignIn").addEventListener("click", () => {
+                    signInWithPopup(auth, provider)
+                        .then((result) => {
+                         
+                            document.getElementById("userInfo").innerText = `Welcome, ${result.user.displayName}`;
+                            document.getElementById("googleSignIn").style.display = "none";
+                            document.getElementById("signOut").style.display = "block";
+                            window.location.href = "index.html";
+                        })
+                        .catch((error) => {
+                            console.error(error.message);
+                        });
+                });
+        
+           
+            
+                document.getElementById("signOut").addEventListener("click", () => {
+                    signOut(auth).then(() => {
+                        document.getElementById("userInfo").innerText = "";
+                        document.getElementById("googleSignIn").style.display = "block";
+                        document.getElementById("signOut").style.display = "none";
+                        localStorage.removeItem("isLoggedIn");
+                        window.location.href = "index.html";
+                    });
+                });
+            </script>
 
 </body>
 </html>
