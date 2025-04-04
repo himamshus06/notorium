@@ -95,7 +95,7 @@
 </head>
 <body>
     <h2>Welcome, <span id="username"></span></h2>
-    <button id="logout-btn" >Logout</button>
+    <button id="signOut" >Logout</button>
 
     <h3>Create a Post</h3>
     <textarea id="post-text" placeholder="Write something..."></textarea>
@@ -119,16 +119,22 @@
         const db = firebase.firestore();
 
         // Redirect if not logged in
+console.log("isLoggedIn:", localStorage.getItem("isLoggedIn"));
+
         if (localStorage.getItem("isLoggedIn") !== "true") {
     window.location.href = "index.html"; // Redirect back to login if not signed in
     alert("Please sign in to access this page.");
 }
 
         // Logout Function
-        document.getElementById("logout-btn").addEventListener("click", () => {
-            localStorage.removeItem("loginState");
-            localStorage.removeItem("userName");
-            window.location.href = "index.html";
+        document.getElementById("signOut").addEventListener("click", () => {
+            signOut(auth).then(() => {
+                document.getElementById("userInfo").innerText = "";
+                document.getElementById("googleSignIn").style.display = "block";
+                document.getElementById("signOut").style.display = "none";
+                localStorage.removeItem("isLoggedIn");
+                window.location.href = "index.html";
+            });
         });
 
         // Convert Image to Base64
